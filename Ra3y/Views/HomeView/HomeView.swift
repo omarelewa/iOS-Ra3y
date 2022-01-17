@@ -17,8 +17,7 @@ struct HomeView: View {
         VStack {
             VStack {
                 Spacer()
-                Text("Ra3y")
-                    .font(.largeTitle)
+                Image("ra3yyy")
             }
             VStack{
                 Text("The Pet Sitter App")
@@ -27,7 +26,7 @@ struct HomeView: View {
                 Button {
                     viewModel.isLoginViewPresented = true
                 } label:{
-                    LoginButton(title: "Sign In", backgroundColor: Color(.systemBlue))
+                    LoginButton(title: "Sign In", backgroundColor: Color.ra3y)
                 }
                 Button {
                 

@@ -17,6 +17,8 @@
 		071BEEE02796158E00F19A71 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEEDF2796158E00F19A71 /* LoginView.swift */; };
 		071BEEE2279616C200F19A71 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEEE1279616C200F19A71 /* LoginButton.swift */; };
 		071BEEE42796185C00F19A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEEE32796185C00F19A71 /* HomeViewModel.swift */; };
+		071BEF2027962AB300F19A71 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF1F27962AB300F19A71 /* CircleImage.swift */; };
+		071BEF2227962E7F00F19A71 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2127962E7F00F19A71 /* colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		071BEEDF2796158E00F19A71 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		071BEEE1279616C200F19A71 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		071BEEE32796185C00F19A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		071BEF1F27962AB300F19A71 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		071BEF2127962E7F00F19A71 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				071BEEE727961B0500F19A71 /* Views */,
 				071BEEE827961B1F00F19A71 /* SecondaryViews */,
 				071BEEB92796061100F19A71 /* Assets.xcassets */,
+				071BEF1F27962AB300F19A71 /* CircleImage.swift */,
 				071BEEBB2796061100F19A71 /* Preview Content */,
 			);
 			path = Ra3y;
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				071BEEB72796060F00F19A71 /* HomeView.swift */,
+				071BEF2127962E7F00F19A71 /* colors.swift */,
 				071BEEE32796185C00F19A71 /* HomeViewModel.swift */,
 			);
 			path = HomeView;
@@ -300,9 +306,11 @@
 			files = (
 				071BEEE02796158E00F19A71 /* LoginView.swift in Sources */,
 				071BEEE2279616C200F19A71 /* LoginButton.swift in Sources */,
+				071BEF2227962E7F00F19A71 /* colors.swift in Sources */,
 				071BEEB82796060F00F19A71 /* HomeView.swift in Sources */,
 				071BEEE42796185C00F19A71 /* HomeViewModel.swift in Sources */,
 				071BEEB62796060F00F19A71 /* Ra3yApp.swift in Sources */,
+				071BEF2027962AB300F19A71 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +484,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = omarelewa.Ra3y;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ra3y;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -504,7 +512,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = omarelewa.Ra3y;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ra3y;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
