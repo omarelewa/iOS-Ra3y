@@ -10,7 +10,6 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     
     @Published var isLoginViewPresented = false
-    
-    
+    @Published var isSignUpViewPresented = false
     
 }

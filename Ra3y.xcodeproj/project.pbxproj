@@ -19,6 +19,10 @@
 		071BEEE42796185C00F19A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEEE32796185C00F19A71 /* HomeViewModel.swift */; };
 		071BEF2027962AB300F19A71 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF1F27962AB300F19A71 /* CircleImage.swift */; };
 		071BEF2227962E7F00F19A71 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2127962E7F00F19A71 /* colors.swift */; };
+		071BEF2727963D6800F19A71 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2627963D6800F19A71 /* SignUpView.swift */; };
+		071BEF29279646F700F19A71 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF28279646F700F19A71 /* ImagePicker.swift */; };
+		071BEF2B2796515800F19A71 /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2A2796515800F19A71 /* FinderView.swift */; };
+		071BEF2E27965B4F00F19A71 /* UserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2D27965B4F00F19A71 /* UserTypeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		071BEEE32796185C00F19A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		071BEF1F27962AB300F19A71 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		071BEF2127962E7F00F19A71 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		071BEF2627963D6800F19A71 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		071BEF28279646F700F19A71 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		071BEF2A2796515800F19A71 /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
+		071BEF2D27965B4F00F19A71 /* UserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				071BEEB72796060F00F19A71 /* HomeView.swift */,
-				071BEF2127962E7F00F19A71 /* colors.swift */,
 				071BEEE32796185C00F19A71 /* HomeViewModel.swift */,
 			);
 			path = HomeView;
@@ -160,8 +167,11 @@
 		071BEEE727961B0500F19A71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				071BEF2527963D2800F19A71 /* SignUpView */,
 				071BEEE527961A6500F19A71 /* HomeView */,
 				071BEEE627961A7500F19A71 /* LoginView */,
+				071BEF2C2796515E00F19A71 /* FinderView */,
+				071BEF2D27965B4F00F19A71 /* UserTypeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,8 +180,26 @@
 			isa = PBXGroup;
 			children = (
 				071BEEE1279616C200F19A71 /* LoginButton.swift */,
+				071BEF2127962E7F00F19A71 /* colors.swift */,
+				071BEF28279646F700F19A71 /* ImagePicker.swift */,
 			);
 			path = SecondaryViews;
+			sourceTree = "<group>";
+		};
+		071BEF2527963D2800F19A71 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				071BEF2627963D6800F19A71 /* SignUpView.swift */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		071BEF2C2796515E00F19A71 /* FinderView */ = {
+			isa = PBXGroup;
+			children = (
+				071BEF2A2796515800F19A71 /* FinderView.swift */,
+			);
+			path = FinderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071BEF2E27965B4F00F19A71 /* UserTypeView.swift in Sources */,
 				071BEEE02796158E00F19A71 /* LoginView.swift in Sources */,
 				071BEEE2279616C200F19A71 /* LoginButton.swift in Sources */,
 				071BEF2227962E7F00F19A71 /* colors.swift in Sources */,
+				071BEF29279646F700F19A71 /* ImagePicker.swift in Sources */,
 				071BEEB82796060F00F19A71 /* HomeView.swift in Sources */,
+				071BEF2727963D6800F19A71 /* SignUpView.swift in Sources */,
+				071BEF2B2796515800F19A71 /* FinderView.swift in Sources */,
 				071BEEE42796185C00F19A71 /* HomeViewModel.swift in Sources */,
 				071BEEB62796060F00F19A71 /* Ra3yApp.swift in Sources */,
 				071BEF2027962AB300F19A71 /* CircleImage.swift in Sources */,

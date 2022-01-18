@@ -14,12 +14,13 @@ struct LoginButton: View {
     
     var body: some View {
         Text(title)
-            .font(.title)
+            .font(.headline)
             .fontWeight(.semibold)
-            .frame(width: 300, height: 50)
+            .frame(width: 220, height: 60)
             .background(backgroundColor)
             .foregroundColor(.white)
-            .cornerRadius(20)
+            .cornerRadius(15.0)
+            .padding()
     }
 }
 
