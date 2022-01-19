@@ -10,21 +10,27 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var viewModel : HomeViewModel
     @State private var selection:String? = nil
+    @State private var showingOptions = false
+    @State private var selection_ = "None"
+//    @State private var s:Int? = nil
     
     var body: some View {
         NavigationView{
-            VStack {
-                VStack {
-                    Text(viewModel.loginDummyUsername)
+            VStack
+            {
+                VStack
+                {
                     Spacer()
                     Image("ra3yyy")
                 }
-                VStack{
+                VStack
+                {
                         Text("The Pet Sitter App")
                             .font(.subheadline)
                             .foregroundColor(Color.ra3y)
                         
                     Spacer()
+                    
                     NavigationLink(destination: LoginView(),
                                    tag: "Login",
                                    selection: $selection)
@@ -34,25 +40,37 @@ struct HomeView: View {
                     NavigationLink(destination: SignUpView(),
                                    tag: "SignUp",
                                    selection: $selection)
-                    {EmptyView()}
+                    {
+                        EmptyView()
+                    }
                     
-                    Button {
-//                            viewModel.selection = "Login"
+                    Picker("What describes you best?",
+                           selection: $viewModel.userTypeSelection
+                           )
+                    {
+                        Text("I am a pet owner").tag("owner")
+                        Text("I am a pet sitter").tag("sitter")
+                    }
+                    Button
+                    {
+                        viewModel.selection = "Login"
                         selection = "Login"
+                        showingOptions = true
 //                            
                     } label:{
                         LoginButton(title: "Sign In", backgroundColor: Color.ra3y)
                     }
                     
-                    Button {
+                    Button (action:{
                         selection = "SignUp"
 //                                viewModel.selection = "SignUp"
 //                                viewModel.isSignUpViewPresented = true
-                    } label: {
+                    }, label: {
                         LoginButton(title: "Sign Up", backgroundColor: Color(.systemCyan))
-                    }
+                    })
                     
                 }
+                
             }.navigationBarHidden(true)
         }//.environmentObject(viewModel)
     }

@@ -8,50 +8,73 @@
 import SwiftUI
 
 struct FinderView: View {
-    
-//    @StateObject var viewModel = HomeViewModel()
     @EnvironmentObject var viewModel : HomeViewModel
-//    init() {
-//        print(viewModel.userTypeSelection ?? "No transaction")
-//    }
+    @State private var mode:String? = nil
     
     var body: some View {
-        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+
             VStack{
                 Text("Select a suitable option")
                     .font(.largeTitle)
-//                    .frame(alignment: .topLeading)
                 
                 Spacer()
                 
-                NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-                    Button{
-                        
-                    } label: {
+                NavigationLink(destination: RequestView(),
+                               tag: "Request",
+                               selection: $mode
+                )
+                {
+                    EmptyView()
+                }
+                NavigationLink(destination: VaccinationsView(),
+                               tag: "Vaccinations",
+                               selection: $mode
+                )
+                {
+                    EmptyView()
+                }
+                NavigationLink(destination: ServicesView(),
+                               tag: "Services",
+                               selection: $mode
+                )
+                {
+                    EmptyView()
+                }
+                
+                
+                Button(
+                    action:
+                    {
+                        mode = "Request"
+                    }, label:
+                    {
                         LoginButton(title: "Request", backgroundColor: Color.ra3y)
                     }
-                }
-                NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-                    Button{
-                        
-                    } label: {
+                )
+                
+                Button(
+                    action:
+                    {
+                        mode = "Vaccinations"
+                    }, label:
+                    {
                         LoginButton(title: "Vaccinations", backgroundColor: Color.ra3y)
                     }
-                }
-                NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-                    Button{
-                        
-                    } label: {
+                )
+            
+                Button(
+                    action:
+                    {
+                        mode = "Services"
+                    }, label:
+                    {
                         LoginButton(title: "Services", backgroundColor: Color.ra3y)
                     }
-                }
+                )
                 
+              
                 Spacer()
-            }.padding(30).tabItem { Text("Options") }.tag(1)
-            
-            Text("Tab Content 2").tabItem { Text("Settings") }.tag(2)
-        }
-        
+            }
     }
 }
 

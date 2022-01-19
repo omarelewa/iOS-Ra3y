@@ -14,6 +14,8 @@ struct LoginView: View {
     
     func checkAuthentication() -> String
     {
+        
+        
         if (viewModel.loginUsername == viewModel.loginDummyUsername
             && viewModel.loginPassword == viewModel.loginDummyPassword)
         {
@@ -49,8 +51,8 @@ struct LoginView: View {
                     Spacer()
                     Group{
                         
-                        NavigationLink(destination: UserTypeView(),
-                                       tag: "SignIn",
+                        NavigationLink(destination: FinderView(),
+                                       tag: "SignInOwner",
                                        selection: $loginSelection
                         )
                         {
@@ -60,7 +62,7 @@ struct LoginView: View {
                         Button(
                             action:
                                 {
-                                    loginSelection = self.checkAuthentication()
+                                    loginSelection = viewModel.checkAuthentication()
                                 },
                             label:
                                 {
@@ -73,14 +75,14 @@ struct LoginView: View {
                     Group{
                         
                         NavigationLink(destination: ForgotPassword(),
-                                       tag: "Forgot",
+                                       tag: "ForgotOwner",
                                        selection: $loginSelection)
                         {
-                            EmptyView()
+                            EmptyView().navigationBarHidden(true)
                         }
                         
                         Button (action:{
-                            loginSelection = self.checkAuthentication()
+                            loginSelection = viewModel.checkAuthentication()
                             }, label:{
                                 Text("Forgot your password?")
                             })
