@@ -8,52 +8,59 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @StateObject var viewModel = HomeViewModel()
-    @State private var selection: String? = nil
-    
-//    @State var isLoginViewPresented = false
-//    @State var isSignUpViewPresented = false
+    @EnvironmentObject var viewModel : HomeViewModel
+    @State private var selection:String? = nil
     
     var body: some View {
         NavigationView{
-            
             VStack {
                 VStack {
+                    Text(viewModel.loginDummyUsername)
                     Spacer()
                     Image("ra3yyy")
                 }
-                
-                    VStack{
+                VStack{
                         Text("The Pet Sitter App")
                             .font(.subheadline)
+                            .foregroundColor(Color.ra3y)
                         
-                        Spacer()
-                        NavigationLink(destination: LoginView(), tag: "Login", selection: $selection){EmptyView()}
-                        NavigationLink(destination: SignUpView(), tag: "SignUp", selection: $selection){EmptyView()}
-                        Button {
-                            selection = "Login"
-//                            viewModel.isLoginViewPresented = true
-                        } label:{
-                            LoginButton(title: "Sign In", backgroundColor: Color.ra3y)
-                        }
-                        
-                        Button {
-                            selection = "SignUp"
-                            viewModel.isSignUpViewPresented = true
-                        } label: {
-                            LoginButton(title: "Sign Up", backgroundColor: Color(.systemCyan))
-                        }
-                    }.navigationTitle("Back")
-                    .navigationBarHidden(true)
+                    Spacer()
+                    NavigationLink(destination: LoginView(),
+                                   tag: "Login",
+                                   selection: $selection)
+                    {
+                        EmptyView()
+                    }
+                    NavigationLink(destination: SignUpView(),
+                                   tag: "SignUp",
+                                   selection: $selection)
+                    {EmptyView()}
+                    
+                    Button {
+//                            viewModel.selection = "Login"
+                        selection = "Login"
+//                            
+                    } label:{
+                        LoginButton(title: "Sign In", backgroundColor: Color.ra3y)
+                    }
+                    
+                    Button {
+                        selection = "SignUp"
+//                                viewModel.selection = "SignUp"
+//                                viewModel.isSignUpViewPresented = true
+                    } label: {
+                        LoginButton(title: "Sign Up", backgroundColor: Color(.systemCyan))
+                    }
+                    
                 }
-        }
-        
+            }.navigationBarHidden(true)
+        }//.environmentObject(viewModel)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
+//    @EnvironmentObject var viewModel : HomeViewModel
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(HomeViewModel())
     }
 }

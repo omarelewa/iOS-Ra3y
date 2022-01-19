@@ -23,6 +23,9 @@
 		071BEF29279646F700F19A71 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF28279646F700F19A71 /* ImagePicker.swift */; };
 		071BEF2B2796515800F19A71 /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2A2796515800F19A71 /* FinderView.swift */; };
 		071BEF2E27965B4F00F19A71 /* UserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2D27965B4F00F19A71 /* UserTypeView.swift */; };
+		071BEF3127966DE400F19A71 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF3027966DE400F19A71 /* ForgotPassword.swift */; };
+		071BEF332796706400F19A71 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF322796706400F19A71 /* VerificationCode.swift */; };
+		07AE952D2797B876007075EB /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE952C2797B876007075EB /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		071BEF28279646F700F19A71 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		071BEF2A2796515800F19A71 /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
 		071BEF2D27965B4F00F19A71 /* UserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeView.swift; sourceTree = "<group>"; };
+		071BEF3027966DE400F19A71 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		071BEF322796706400F19A71 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
+		07AE952C2797B876007075EB /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +165,9 @@
 		071BEEE627961A7500F19A71 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
+				071BEF3027966DE400F19A71 /* ForgotPassword.swift */,
 				071BEEDF2796158E00F19A71 /* LoginView.swift */,
+				071BEF322796706400F19A71 /* VerificationCode.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -171,7 +179,8 @@
 				071BEEE527961A6500F19A71 /* HomeView */,
 				071BEEE627961A7500F19A71 /* LoginView */,
 				071BEF2C2796515E00F19A71 /* FinderView */,
-				071BEF2D27965B4F00F19A71 /* UserTypeView.swift */,
+				071BEF2F27966D3500F19A71 /* UserTypeView */,
+				07AE952C2797B876007075EB /* AppData.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +209,14 @@
 				071BEF2A2796515800F19A71 /* FinderView.swift */,
 			);
 			path = FinderView;
+			sourceTree = "<group>";
+		};
+		071BEF2F27966D3500F19A71 /* UserTypeView */ = {
+			isa = PBXGroup;
+			children = (
+				071BEF2D27965B4F00F19A71 /* UserTypeView.swift */,
+			);
+			path = UserTypeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,8 +358,11 @@
 				071BEF2727963D6800F19A71 /* SignUpView.swift in Sources */,
 				071BEF2B2796515800F19A71 /* FinderView.swift in Sources */,
 				071BEEE42796185C00F19A71 /* HomeViewModel.swift in Sources */,
+				071BEF332796706400F19A71 /* VerificationCode.swift in Sources */,
 				071BEEB62796060F00F19A71 /* Ra3yApp.swift in Sources */,
 				071BEF2027962AB300F19A71 /* CircleImage.swift in Sources */,
+				071BEF3127966DE400F19A71 /* ForgotPassword.swift in Sources */,
+				07AE952D2797B876007075EB /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ra3y/Preview Content\"";
+				DEVELOPMENT_TEAM = 72V9LG843X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -519,7 +540,7 @@
 				PRODUCT_NAME = Ra3y;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -531,6 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ra3y/Preview Content\"";
+				DEVELOPMENT_TEAM = 72V9LG843X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -547,7 +569,7 @@
 				PRODUCT_NAME = Ra3y;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

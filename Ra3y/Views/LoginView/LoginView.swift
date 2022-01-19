@@ -8,68 +8,99 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
-    var dummy_username = "Omar"
-    var dummy_password = "qwertyuiop"
     
-    @State private var selection: String? = nil
+    @EnvironmentObject var viewModel : HomeViewModel
+    @State private var loginSelection:String? = nil
     
-    @State var authenticationUserName: Bool = false
-    @State var authenticationPassword: Bool = false
-    
-    @State var authenticationDidFail: Bool = false
-    @State var authenticationDidSucceed: Bool = false
-    
-    @State var editingMode: Bool = false
+    func checkAuthentication() -> String
+    {
+        if (viewModel.loginUsername == viewModel.loginDummyUsername
+            && viewModel.loginPassword == viewModel.loginDummyPassword)
+        {
+            viewModel.loginSelection = "SignIn"
+            return "SignIn"
+        }
+        else {
+            print(viewModel.loginUsername)
+            print(viewModel.loginPassword)
+            viewModel.loginSelection = "Forgot"
+            return "Forgot"
+        }
+    }
+
     
     var body: some View {
-//        NavigationView{
-            VStack {
-                WelcomeText()
-                UserImage()
-                Spacer()
-            
-                NavigationLink(destination: UserTypeView(), tag: "SignIn", selection: $selection){EmptyView()}
-                NavigationLink(destination: SignUpView(), tag: "Forgot", selection: $selection){EmptyView()}
-                
-                UserNameSubView(username: $username)
-                PasswordSubview(password: $password)
-            
-                Spacer()
-                Button {
-                    selection = "SignIn"
-                } label:{
-                    LoginButton(title: "Sign In", backgroundColor: Color.ra3y)
+        
+        NavigationView{
+                VStack {
+                    Spacer()
                     
-                }
-
-                Button("Forgot my password") {
-                    selection = "Forgot"
-                }
-            }
-            .padding()
-    }
-    
-    func authentication(){
-        if username == dummy_username{
-            authenticationUserName = true
-        }
-        if password == dummy_password{
-            authenticationPassword = true
-        }
-        authenticationDidSucceed = authenticationPassword && authenticationUserName
-        print(authenticationDidSucceed)
+                    Group{
+                        Spacer()
+                        WelcomeText().environmentObject(viewModel)
+                        UserImage().environmentObject(viewModel)
+                    }
+                    
+                    Spacer()
+                    
+                    UserNameSubView().environmentObject(viewModel)
+                    PasswordSubview().environmentObject(viewModel)
+                
+                    Spacer()
+                    Group{
+                        
+                        NavigationLink(destination: UserTypeView(),
+                                       tag: "SignIn",
+                                       selection: $loginSelection
+                        )
+                        {
+                            EmptyView()
+                        }
+                            
+                        Button(
+                            action:
+                                {
+                                    loginSelection = self.checkAuthentication()
+                                },
+                            label:
+                                {
+                                    LoginButton(title: "Sign In",
+                                                backgroundColor: Color.ra3y)
+                                }
+                        )
+                    }
+                    
+                    Group{
+                        
+                        NavigationLink(destination: ForgotPassword(),
+                                       tag: "Forgot",
+                                       selection: $loginSelection)
+                        {
+                            EmptyView()
+                        }
+                        
+                        Button (action:{
+                            loginSelection = self.checkAuthentication()
+                            }, label:{
+                                Text("Forgot your password?")
+                            })
+                    }
+                }.padding()
+                .navigationTitle("Log Out")
+                .navigationBarHidden(true)
+        }.navigationBarHidden(true)
     }
 }
+        
 
 struct LoginView_Previews : PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView().environmentObject(HomeViewModel())
     }
 }
 
 struct WelcomeText : View {
+        
     var body: some View {
         return Text("Welcome Back!")
             .font(.largeTitle)
@@ -79,6 +110,7 @@ struct WelcomeText : View {
 }
 
 struct UserImage : View {
+        
     var body: some View {
         return Image("omar")
             .resizable()
@@ -91,26 +123,28 @@ struct UserImage : View {
 }
 
 struct UserNameSubView: View {
-    @Binding var username: String
-    var dummy_username = "Omar"
+//    @Binding var loginUsername: String
+    @EnvironmentObject var viewModel : HomeViewModel
+        
     var body: some View {
-        TextField("Username", text: $username)
+        TextField("Username", text: $viewModel.loginUsername)
             .padding()
             .background(Color.lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
-        
+            
     }
-    
 }
 
 struct PasswordSubview: View {
-    @Binding var password: String
+    @EnvironmentObject var viewModel : HomeViewModel
+    
     var body: some View {
-        SecureField("Password", text: $password)
+        SecureField("Password", text: $viewModel.loginPassword)
             .padding()
             .background(Color.lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            
     }
 }

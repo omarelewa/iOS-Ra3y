@@ -8,22 +8,29 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State var firstName = ""
-    @State var lastName = ""
-    @State var email = ""
-    @State var password = ""
-    @State var confirm_password = ""
-    @State var telephone = ""
     
+//    @StateObject var viewModel = HomeViewModel()
+    @EnvironmentObject var viewModel : HomeViewModel
+
     @State private var showingImagePicker = false
     @State private var image:Image?
     
     
     var body: some View {
+        ScrollView {
         VStack {
+            HStack {
+                Text("Create your new account")
+                    .font(.title)
+                    .padding()
+                Spacer()
+            }
+                
+            
             ZStack {
                 Rectangle()
                         .fill(.secondary)
+                        .frame(minWidth: 300, idealWidth: .infinity, maxWidth: .infinity, minHeight: 300, idealHeight: 500, maxHeight: 500)
 
                 Text("Tap to select a picture")
                         .foregroundColor(.white)
@@ -35,51 +42,65 @@ struct SignUpView: View {
                     }
                     .onTapGesture {
                         // select an image
-            }
-            Spacer()
+                    }
+            Spacer(minLength: 30)
+            
             HStack {
-                TextField("First Name", text: $firstName)
+                TextField("First Name", text: $viewModel.signupFirstName)
                     .padding()
                     .background(Color.lightGreyColor)
                     .cornerRadius(5.0)
                 
-                TextField("Last Name", text: $lastName)
+                TextField("Last Name", text: $viewModel.signupLastName)
+                    .padding()
+                    .background(Color.lightGreyColor)
+                    .cornerRadius(5.0)
+            }
+            Group{
+                TextField("Email", text: $viewModel.signupEmail)
+                    .padding()
+                    .background(Color.lightGreyColor)
+                    .cornerRadius(5.0)
+        
+                TextField("Phone Number", text: $viewModel.signupPhoneNumber)
+                    .padding()
+                    .background(Color.lightGreyColor)
+                    .cornerRadius(5.0)
+        
+                TextField("Password", text: $viewModel.signupPassword)
+                    .padding()
+                    .background(Color.lightGreyColor)
+                    .cornerRadius(5.0)
+        
+                TextField("Confirm Password", text: $viewModel.signupConfirmPassword)
                     .padding()
                     .background(Color.lightGreyColor)
                     .cornerRadius(5.0)
             }
             
-            TextField("Email", text: $email)
-                .padding()
-                .background(Color.lightGreyColor)
-                .cornerRadius(5.0)
-            
-            TextField("Phone Number", text: $telephone)
-                .padding()
-                .background(Color.lightGreyColor)
-                .cornerRadius(5.0)
-            
-            TextField("Password", text: $password)
-                .padding()
-                .background(Color.lightGreyColor)
-                .cornerRadius(5.0)
-            
-            TextField("Confirm Password", text: $confirm_password)
-                .padding()
-                .background(Color.lightGreyColor)
-                .cornerRadius(5.0)
+                
+            }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             
             Button {
             } label:{
-                LoginButton(title: "Sign Up", backgroundColor: Color.ra3y)
+                Text("Sign Up")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .frame(width: 220, height: 60)
+                    .background(Color.ra3y)
+                    .foregroundColor(.white)
+                    .cornerRadius(15.0)
                 
-            }
-        }.padding()
+            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
+            
+        }.edgesIgnoringSafeArea(.bottom)
+            
     }
 }
 
 struct SignUpView_Previews : PreviewProvider {
     static var previews: some View {
         SignUpView()
+.previewInterfaceOrientation(.portrait)
     }
 }

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Ra3yApp: App {
+    @StateObject var viewModel = HomeViewModel()
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView().environmentObject(viewModel)
         }
     }
 }
