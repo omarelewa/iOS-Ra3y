@@ -33,65 +33,80 @@ struct LoginView: View {
     
     var body: some View {
         
-        NavigationView{
+//        NavigationView{
                 VStack {
                     Spacer()
                     
                     Group{
                         Spacer()
-                        WelcomeText().environmentObject(viewModel)
-                        UserImage().environmentObject(viewModel)
+                        WelcomeText()
+                        UserImage()
                     }
                     
                     Spacer()
                     
-                    UserNameSubView().environmentObject(viewModel)
-                    PasswordSubview().environmentObject(viewModel)
+                    UserNameSubView()
+                    PasswordSubview()
                 
                     Spacer()
                     Group{
-                        
                         NavigationLink(destination: FinderView(),
                                        tag: "SignInOwner",
-                                       selection: $loginSelection
+                                       selection: $viewModel.loginSelection
                         )
                         {
                             EmptyView()
-                        }
-                            
-                        Button(
-                            action:
-                                {
-                                    loginSelection = viewModel.checkAuthentication()
-                                },
-                            label:
-                                {
-                                    LoginButton(title: "Sign In",
-                                                backgroundColor: Color.ra3y)
-                                }
-                        )
-                    }
-                    
-                    Group{
+                        }.isDetailLink(false)
                         
                         NavigationLink(destination: ForgotPassword(),
                                        tag: "ForgotOwner",
-                                       selection: $loginSelection)
+                                       selection: $viewModel.loginSelection)
                         {
-                            EmptyView().navigationBarHidden(true)
-                        }
+                            EmptyView()
+                        }.isDetailLink(false)
                         
-                        Button (action:{
-                            loginSelection = viewModel.checkAuthentication()
-                            }, label:{
-                                Text("Forgot your password?")
-                            })
+                        NavigationLink(destination: FinderView(),
+                                       tag: "SignInSitter",
+                                       selection: $viewModel.loginSelection
+                        )
+                        {
+                            EmptyView()
+                        }.isDetailLink(false)
+                        
+                        NavigationLink(destination: ForgotPassword(),
+                                       tag: "ForgotSitter",
+                                       selection: $viewModel.loginSelection)
+                        {
+                            EmptyView()
+                        }.isDetailLink(false)
+                        
                     }
+                    
+                    Button(
+                        action:
+                            {
+                                loginSelection = viewModel.checkAuthentication()
+                            },
+                        label:
+                            {
+                                LoginButton(title: "Sign In",
+                                            backgroundColor: Color.ra3y)
+                            }
+                    )
+   
+                    Button (
+                        action:{
+                        loginSelection = viewModel.checkAuthentication()
+                        }, label:{
+                            Text("Forgot your password?")
+                        }
+                    )
+                    
                 }.padding()
                 .navigationTitle("Log Out")
                 .navigationBarHidden(true)
-        }.navigationBarHidden(true)
-    }
+        }
+//    }
 }
         
 

@@ -9,72 +9,74 @@ import SwiftUI
 
 struct FinderView: View {
     @EnvironmentObject var viewModel : HomeViewModel
-    @State private var mode:String? = nil
+//    @State private var mode:String? = nil
     
     var body: some View {
-
+//        NavigationView{
             VStack{
                 Text("Select a suitable option")
                     .font(.largeTitle)
                 
                 Spacer()
-                
-                NavigationLink(destination: RequestView(),
-                               tag: "Request",
-                               selection: $mode
-                )
-                {
-                    EmptyView()
+                Group{
+                    NavigationLink(destination: RequestView(),
+                                   tag: "Request",
+                                   selection: $viewModel.finderMode
+                    )
+                    {
+                        EmptyView()
+                    }.isDetailLink(false)
+                    NavigationLink(destination: VaccinationsView(),
+                                   tag: "Vaccinations",
+                                   selection: $viewModel.finderMode
+                    )
+                    {
+                        EmptyView()
+                    }.isDetailLink(false)
+                    NavigationLink(destination: ServicesView(),
+                                   tag: "Services",
+                                   selection: $viewModel.finderMode
+                    )
+                    {
+                        EmptyView()
+                    }.isDetailLink(false)
                 }
-                NavigationLink(destination: VaccinationsView(),
-                               tag: "Vaccinations",
-                               selection: $mode
-                )
-                {
-                    EmptyView()
+                
+                Group{
+                    Button(
+                        action:
+                        {
+                            viewModel.finderMode = "Request"
+                        }, label:
+                        {
+                            LoginButton(title: "Request", backgroundColor: Color.ra3y)
+                        }
+                    )
+                    
+                    Button(
+                        action:
+                        {
+                            viewModel.finderMode = "Vaccinations"
+                        }, label:
+                        {
+                            LoginButton(title: "Vaccinations", backgroundColor: Color.ra3y)
+                        }
+                    )
+                
+                    Button(
+                        action:
+                        {
+                            viewModel.finderMode = "Services"
+                        }, label:
+                        {
+                            LoginButton(title: "Services", backgroundColor: Color.ra3y)
+                        }
+                    )
                 }
-                NavigationLink(destination: ServicesView(),
-                               tag: "Services",
-                               selection: $mode
-                )
-                {
-                    EmptyView()
-                }
-                
-                
-                Button(
-                    action:
-                    {
-                        mode = "Request"
-                    }, label:
-                    {
-                        LoginButton(title: "Request", backgroundColor: Color.ra3y)
-                    }
-                )
-                
-                Button(
-                    action:
-                    {
-                        mode = "Vaccinations"
-                    }, label:
-                    {
-                        LoginButton(title: "Vaccinations", backgroundColor: Color.ra3y)
-                    }
-                )
-            
-                Button(
-                    action:
-                    {
-                        mode = "Services"
-                    }, label:
-                    {
-                        LoginButton(title: "Services", backgroundColor: Color.ra3y)
-                    }
-                )
-                
               
                 Spacer()
             }
+//        }
     }
 }
 

@@ -6,18 +6,45 @@
 //
 
 import SwiftUI
+import CoreLocationUI
+import CoreLocation
 
 struct RequestView: View {
     @EnvironmentObject var viewModel : HomeViewModel
-    
+    @State private var startDate = Date()
+    @State private var endDate = Date()
+    @StateObject var locationManager = LocationManager()
+
     var body: some View {
-        VStack{
-            Text("Please Provide the following details:")
-            Text("Location")
-            Text("Duration")
-            TextField("Please provide any additional information about the pet",
-                      text: $viewModel.additionalInformation)
+        HStack{
+            Text("Please Provide the following details:").padding()
+            Spacer()
         }
+        Form{
+            Section("Location"){
+
+                if let location = locationManager.location {
+                    Text("Your location: \(location.latitude), \(location.longitude)")
+                }
+
+                LocationButton {
+                    locationManager.requestLocation()
+                }
+            }
+            Section("Duration"){
+                DatePicker(selection: $startDate, in: Date()..., displayedComponents: .date)
+                {
+                    Text("From")
+                }
+                DatePicker(selection: $endDate, in: Date()..., displayedComponents: .date)
+                {
+                    Text("To")
+                }
+            }
+            Section("Additional Information"){
+                TextEditor(text: $viewModel.additionalInformation)
+            }
+        }.navigationBarTitle("Request")
     }
 }
 

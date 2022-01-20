@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct Ra3yApp: App {
     @StateObject var viewModel = HomeViewModel()
+//    @StateObject var locationManager = LocationManager()
     var body: some Scene {
         WindowGroup {
             HomeView().environmentObject(viewModel)

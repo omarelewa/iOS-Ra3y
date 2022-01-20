@@ -25,7 +25,7 @@ struct VerificationCode: View {
                 .background(Color.lightGreyColor)
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
-            NavigationLink(destination: UserTypeView(), tag: "Send", selection: $selection){EmptyView()}
+            NavigationLink(destination: LoginView(), tag: "Send", selection: $selection){EmptyView()}
             Button{
                 selection="Send"
             } label:{

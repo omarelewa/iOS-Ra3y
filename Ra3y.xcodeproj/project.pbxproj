@@ -25,6 +25,9 @@
 		071BEF2E27965B4F00F19A71 /* UserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF2D27965B4F00F19A71 /* UserTypeView.swift */; };
 		071BEF3127966DE400F19A71 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF3027966DE400F19A71 /* ForgotPassword.swift */; };
 		071BEF332796706400F19A71 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071BEF322796706400F19A71 /* VerificationCode.swift */; };
+		07848FF02798D9560055EEF9 /* SignUpNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07848FEF2798D9560055EEF9 /* SignUpNew.swift */; };
+		07848FF32798D9930055EEF9 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07848FF22798D9930055EEF9 /* SignupViewModel.swift */; };
+		07848FF52798F92C0055EEF9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07848FF42798F92C0055EEF9 /* LocationManager.swift */; };
 		07AE956C2798B0B7007075EB /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE956B2798B0B7007075EB /* RequestView.swift */; };
 		07AE956E2798B0D5007075EB /* VaccinationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE956D2798B0D5007075EB /* VaccinationsView.swift */; };
 		07AE95702798B0E0007075EB /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE956F2798B0E0007075EB /* ServicesView.swift */; };
@@ -69,6 +72,9 @@
 		071BEF2D27965B4F00F19A71 /* UserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeView.swift; sourceTree = "<group>"; };
 		071BEF3027966DE400F19A71 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		071BEF322796706400F19A71 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
+		07848FEF2798D9560055EEF9 /* SignUpNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNew.swift; sourceTree = "<group>"; };
+		07848FF22798D9930055EEF9 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		07848FF42798F92C0055EEF9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		07AE956B2798B0B7007075EB /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		07AE956D2798B0D5007075EB /* VaccinationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationsView.swift; sourceTree = "<group>"; };
 		07AE956F2798B0E0007075EB /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 			children = (
 				071BEEB52796060F00F19A71 /* Ra3yApp.swift */,
 				071BEEE32796185C00F19A71 /* HomeViewModel.swift */,
+				07848FF42798F92C0055EEF9 /* LocationManager.swift */,
 				071BEEE727961B0500F19A71 /* Views */,
 				071BEEE827961B1F00F19A71 /* SecondaryViews */,
 				071BEEB92796061100F19A71 /* Assets.xcassets */,
@@ -187,6 +194,7 @@
 				07AE956B2798B0B7007075EB /* RequestView.swift */,
 				07AE956D2798B0D5007075EB /* VaccinationsView.swift */,
 				07AE956F2798B0E0007075EB /* ServicesView.swift */,
+				07848FF12798D95B0055EEF9 /* New Group */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +231,15 @@
 				071BEF2D27965B4F00F19A71 /* UserTypeView.swift */,
 			);
 			path = UserTypeView;
+			sourceTree = "<group>";
+		};
+		07848FF12798D95B0055EEF9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				07848FEF2798D9560055EEF9 /* SignUpNew.swift */,
+				07848FF22798D9930055EEF9 /* SignupViewModel.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +372,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07848FF32798D9930055EEF9 /* SignupViewModel.swift in Sources */,
+				07848FF02798D9560055EEF9 /* SignUpNew.swift in Sources */,
 				07AE956C2798B0B7007075EB /* RequestView.swift in Sources */,
 				071BEF2E27965B4F00F19A71 /* UserTypeView.swift in Sources */,
 				071BEEE02796158E00F19A71 /* LoginView.swift in Sources */,
@@ -370,6 +389,7 @@
 				07AE95702798B0E0007075EB /* ServicesView.swift in Sources */,
 				071BEEB62796060F00F19A71 /* Ra3yApp.swift in Sources */,
 				071BEF2027962AB300F19A71 /* CircleImage.swift in Sources */,
+				07848FF52798F92C0055EEF9 /* LocationManager.swift in Sources */,
 				071BEF3127966DE400F19A71 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

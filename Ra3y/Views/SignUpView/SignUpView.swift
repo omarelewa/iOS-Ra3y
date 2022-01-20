@@ -39,7 +39,7 @@ struct SignUpView: View {
                 image?
                         .resizable()
                         .scaledToFit()
-                    }
+                }
                     .onTapGesture {
                         // select an image
                     }

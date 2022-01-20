@@ -30,7 +30,7 @@ struct ForgotPassword: View {
                     viewModel.verificationSelection = "Send"
             } label:{
                 LoginButton(title: "Send Verification Code", backgroundColor: Color.ra3y)
-            }}
+            }}.isDetailLink(false)
             
         }.padding()
     }

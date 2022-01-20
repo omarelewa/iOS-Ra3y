@@ -33,16 +33,16 @@ struct HomeView: View {
                     
                     NavigationLink(destination: LoginView(),
                                    tag: "Login",
-                                   selection: $selection)
+                                   selection: $viewModel.navigator)
                     {
                         EmptyView()
-                    }
-                    NavigationLink(destination: SignUpView(),
+                    }.isDetailLink(false)
+                    NavigationLink(destination: SignUpNewView(),
                                    tag: "SignUp",
-                                   selection: $selection)
+                                   selection: $viewModel.navigator)
                     {
                         EmptyView()
-                    }
+                    }.isDetailLink(false)
                     
                     Picker("What describes you best?",
                            selection: $viewModel.userTypeSelection
@@ -55,6 +55,7 @@ struct HomeView: View {
                     {
                         viewModel.selection = "Login"
                         selection = "Login"
+                        viewModel.navigator = "Login"
                         showingOptions = true
 //                            
                     } label:{
@@ -63,6 +64,7 @@ struct HomeView: View {
                     
                     Button (action:{
                         selection = "SignUp"
+                        viewModel.navigator = "SignUp"
 //                                viewModel.selection = "SignUp"
 //                                viewModel.isSignUpViewPresented = true
                     }, label: {

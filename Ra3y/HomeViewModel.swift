@@ -10,10 +10,14 @@ import SwiftUI
 //@MainActor
 class HomeViewModel: ObservableObject {
     
+    @Published var navigator:String? = nil
+    
     // HomeView
     @Published var isLoginViewPresented:Bool = false
     @Published var isSignUpViewPresented:Bool = false
-    @Published var selection: String = ""
+    @Published var selection: String? = nil
+    
+
     
     // UserTypeView
     @Published var userTypeSelection: String = "owner"
@@ -69,8 +73,13 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    // FinderView
+    @Published var finderMode:String? = nil
+    
     // RequestView
-    @Published var additionalInformation:String = ""
+    @Published var additionalInformation:String = "..."
+    @Published var startDate = Date()
+    @Published var endDate = Date()
     
     // VaccinationsView
     
